@@ -1,0 +1,116 @@
+#loader {
+	color: #999;
+	font-size: 20px;
+	margin-left: 15px;
+}
+
+.post-email-logo{
+	
+	float: left;
+}
+
+.opt-title{
+	overflow: hidden;
+	font-size: 18px;
+}
+
+.opt-title .intro-text{
+	padding-left: 8px;
+}
+.filter-stats{
+	margin-left: 20%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.btn-filter-stats,.btn-filter-stats:hover{
+	background-color: #2ea2cc !important;
+	border-color: #2ea2cc !important;
+	color: #fff;
+}
+
+
+.pull-right {
+  float: right !important;
+}
+
+
+.add-space{
+	margin-left: 133px;
+	margin-top: 34px;
+}
+
+.nav-tabs.pos-tabs li{
+	background-image: -moz-linear-gradient(#59D5FF, #119ed3);
+    background-image: -o-linear-gradient(#59D5FF, #119ed3);
+    background-image: -webkit-linear-gradient(#59D5FF, #119ed3);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #59D5FF), color-stop(1, #119ed3));
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=#59D5FF, EndColorStr=#119ed3)";
+    background-image: linear-gradient(#59D5FF, #119ed3);
+	color: #fff;
+	background-color: #59D5FF;
+	border: 1px solid #0896c6;
+}
+.nav-tabs.pos-tabs .glyphicon{
+	margin-right: 10px;
+}
+/*.nav-tabs.pos-tabs{
+	padding-left: 10px;
+}*/
+.pos-tab-pane{
+	padding: 20px;
+	border: 1px solid #0896c6;
+	border-top: none;
+	background: #fff;
+}
+.nav-tabs.pos-tabs li.active,.nav-tabs.pos-tabs li:hover{
+	border-top-color: #0896c6;
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+.nav-tabs.pos-tabs li a{
+	color: #fff;
+	border-radius: 0;
+	border: 0;
+	float: left;
+	width: 100%;
+	background: none;
+	border: 0;
+	padding: 13px 17px;
+}
+.nav-tabs.pos-tabs li a:hover{
+	border: none;
+	border-radius: 0;
+}
+.nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus{
+	border: none;
+}
+.nav-tabs.pos-tabs{
+	border-bottom-color: #0896c6;
+}
+.nav-tabs.pos-tabs li.active a,.nav-tabs.pos-tabs li a:hover{
+	color: #333;
+	border: 0;
+	background: none;
+}
+.nav-tabs.pos-tabs > li > a,.nav-tabs.pos-tabs > li > a:hover{
+	margin: 0;
+	float: left;
+	text-decoration: none;
+}
+@media (max-width: 700px){
+	.nav-tabs.pos-tabs li{
+		width: 33%;
+		float: left;
+	}
+}
+@media (max-width: 650px){
+	
+}
+@media (max-width: 480px){
+	
+
+}
+@media (max-width: 400px){
+	
+	
+}
