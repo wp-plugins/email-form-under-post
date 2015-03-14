@@ -29,6 +29,7 @@ The ONLY Plugin Brings Per Post Email form and send email through mandrill or si
 *  Set email template for mandrill**
 *  WP editor for writing message
 *  Send emails through ajax without page refresh
+*  Localization Ready with French language (You can add any language in lang folder)
 > Premium Version will be lanched very soon with bunch of features.
 
 == Installation ==
