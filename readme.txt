@@ -61,14 +61,18 @@ Wherever you and your customers are, Mandrill can deliver your email in millisec
 
 = How I can get mandrill API ? =
 You can read doc here (https://mandrillapp.com/api/docs/)
+
 = How I can create Template in mandrill ? =
-First Go to mandrill account search for template and add any html design for email template and put this variable [*|ALL_CONTACT|*] where you want to show contacts. If you still facing problem you can post on support.
+First Go to mandrill account search for template and add any html design for email template and put this variable [star|ALL_CONTACT|star] where you want to show contacts. If you still facing problem you can post on support.
+star mean *
 
 == Screenshots ==
 
-1. Email Form Under Post Setting Screen.
-2. Email Form Under Post dashboard.
-3. Email Form Under Post fron end.
+1. Email Form Under Post dashboard stats.
+2. Email Form Under Post dashboard senders.
+3. Email Form Under Post mandrill Setting Screen.
+4. Email Form Under Post plugin Setting Screen.
+5. Email Form Under Post plugin Setting Screen.
 
 == Changelog ==
 
