@@ -62,7 +62,8 @@ Wherever you and your customers are, Mandrill can deliver your email in millisec
 = How I can get mandrill API ? =
 
 You can read doc here (https://mandrillapp.com/api/docs/)
-
+= How I can create Template in mandrill?
+First Go to mandrill account search for template and add any html design for email template and put this variable *|ALL_CONTACT|* where you want to show contacts. If you still facing problem you can post on support.
 
 == Screenshots ==
 
