@@ -1,0 +1,683 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Google Analytics in WordPress v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-09-23 13:56:25+0000\n"
+"Last-Translator: test <test@test.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: analytics-wordpress.php:0
+#: plugin-pages/analytics-wordpress-dashboard.php:37
+#: plugin-pages/analytics-wordpress-settings.php:156
+#@ gaw-analytics
+msgid "Google Analytics in WordPress"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#. translators: plugin header field 'AuthorURI'
+#: analytics-wordpress.php:0
+#@ gaw-analytics
+msgid "http://codecanyon.net/user/google-guru"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: analytics-wordpress.php:0
+#@ gaw-analytics
+msgid "Google Analytics in WordPress is the WordPress plugin which display Google Analytics within WordPress (Dashboard page,Under edit post and frontend). With this plugin there is no need"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: analytics-wordpress.php:0
+#@ gaw-analytics
+msgid "Analytics Master"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: analytics-wordpress.php:0
+#@ gaw-analytics
+msgid "1.0.0"
+msgstr ""
+
+#: classes/analytics-core.php:165
+#: classes/analytics-core.php:190
+#@ gaw-analytics
+msgid "Settings"
+msgstr "paramètres"
+
+#: classes/analytics-core.php:165
+#: classes/analytics-core.php:185
+#@ gaw-analytics
+msgid "Dashboard"
+msgstr "tableau de bord"
+
+#: classes/analytics-core.php:600
+#@ gaw-analytics
+msgid "Sorry.. But You have not any rights to see stats right now.."
+msgstr "Désolé .. mais vous n'avez pas les droits pour voir les statistiques en ce moment .."
+
+#: google-stats/dashboard/browser-stats.php:112
+#: google-stats/dashboard/country-stats.php:56
+#: google-stats/dashboard/date-wise-stats.php:62
+#: google-stats/dashboard/device-stats.php:60
+#: google-stats/dashboard/event-stats.php:64
+#: google-stats/dashboard/language-stats.php:60
+#: google-stats/dashboard/pages-stats.php:44
+#: google-stats/dashboard/referrers-stats.php:88
+#: google-stats/dashboard/social-stats.php:54
+#: google-stats/dashboard/user-stats.php:44
+#: google-stats/posts/back/browser-stats.php:63
+#: google-stats/posts/back/country-stats.php:51
+#: google-stats/posts/back/date-wise-stats.php:61
+#: google-stats/posts/back/device-stats.php:59
+#: google-stats/posts/back/event-stats.php:63
+#: google-stats/posts/back/language-stats.php:59
+#: google-stats/posts/back/pages-stats.php:54
+#: google-stats/posts/back/referrers-stats.php:56
+#: google-stats/posts/back/social-stats.php:53
+#: google-stats/posts/front/browser-stats.php:63
+#: google-stats/posts/front/country-stats.php:51
+#: google-stats/posts/front/date-wise-stats.php:61
+#: google-stats/posts/front/device-stats.php:59
+#: google-stats/posts/front/event-stats.php:63
+#: google-stats/posts/front/language-stats.php:59
+#: google-stats/posts/front/pages-stats.php:54
+#: google-stats/posts/front/referrers-stats.php:56
+#: google-stats/posts/front/social-stats.php:53
+#@ gaw-analytics
+msgid "Nothing There"
+msgstr "rien Il"
+
+#: google-stats/dashboard/country-stats.php:9
+#: google-stats/posts/back/country-stats.php:9
+#: google-stats/posts/front/country-stats.php:9
+#@ gaw-analytics
+msgid "Country Wise Stats"
+msgstr "Pays Sages Statistiques"
+
+#: google-stats/dashboard/date-wise-stats.php:11
+#: google-stats/posts/back/date-wise-stats.php:10
+#: google-stats/posts/front/date-wise-stats.php:10
+#@ gaw-analytics
+msgid "Ten days Stats"
+msgstr "Dix jours Statistiques"
+
+#: google-stats/dashboard/device-stats.php:11
+#: google-stats/posts/back/device-stats.php:10
+#: google-stats/posts/front/device-stats.php:10
+#@ gaw-analytics
+msgid "Top Ten Mobile Devices"
+msgstr "Top Dix appareils mobiles"
+
+#: google-stats/dashboard/event-stats.php:11
+#: google-stats/posts/back/event-stats.php:10
+#: google-stats/posts/front/event-stats.php:10
+#@ gaw-analytics
+msgid "Top Ten Events occour on your site"
+msgstr "Dix événements occour sur votre site"
+
+#: google-stats/dashboard/general-stats.php:9
+#: google-stats/posts/back/general-stats.php:9
+#: google-stats/posts/front/general-stats.php:9
+#@ gaw-analytics
+msgid "Quick Overview"
+msgstr "Description rapide"
+
+#: google-stats/dashboard/general-stats.php:19
+#: google-stats/posts/back/general-stats.php:28
+#: google-stats/posts/front/general-stats.php:19
+#@ gaw-analytics
+msgid "Overall Sessions"
+msgstr "Sessions d'ensemble"
+
+#: google-stats/dashboard/general-stats.php:22
+#: google-stats/posts/back/general-stats.php:31
+#: google-stats/posts/front/general-stats.php:22
+#@ gaw-analytics
+msgid "A session is the period time a user is actively engaged with your website, app, etc."
+msgstr "Une session est la période de temps un utilisateur est activement engagée avec votre site web , application , etc"
+
+#: google-stats/dashboard/general-stats.php:30
+#: google-stats/posts/back/general-stats.php:48
+#: google-stats/posts/front/general-stats.php:30
+#@ gaw-analytics
+msgid "Overall Visited Users"
+msgstr "Les utilisateurs ont visité l'ensemble"
+
+#: google-stats/dashboard/general-stats.php:33
+#: google-stats/posts/back/general-stats.php:51
+#: google-stats/posts/front/general-stats.php:33
+#@ gaw-analytics
+msgid "Users that have had at least one session within the selected date range."
+msgstr "Les utilisateurs qui ont eu au moins une séance dans la gamme de date sélectionnée ."
+
+#: google-stats/dashboard/general-stats.php:53
+#: google-stats/posts/back/general-stats.php:71
+#: google-stats/posts/front/general-stats.php:53
+#@ gaw-analytics
+msgid "Overall Bounce Rate"
+msgstr "Taux global de Bounce"
+
+#: google-stats/dashboard/general-stats.php:56
+#: google-stats/posts/back/general-stats.php:74
+#: google-stats/posts/front/general-stats.php:56
+#@ gaw-analytics
+msgid "Bounce Rate is the percentage of single-page visits (i.e. visits in which the person left your site from the entrance page without interacting with the page)."
+msgstr "Taux de rebond est le pourcentage de visites d'une seule page ( c.-à- visites au cours desquelles la personne quitté votre site dès la page d'entrée sans interagir avec la page ) ."
+
+#: google-stats/dashboard/general-stats.php:64
+#: google-stats/posts/back/general-stats.php:82
+#: google-stats/posts/front/general-stats.php:64
+#@ gaw-analytics
+msgid "Avg. Session Duration"
+msgstr "Moy. session Durée"
+
+#: google-stats/dashboard/general-stats.php:67
+#: google-stats/posts/back/general-stats.php:85
+#: google-stats/posts/front/general-stats.php:67
+#@ gaw-analytics
+msgid "The average duration of user sessions represented in total seconds."
+msgstr "La durée moyenne des sessions d'utilisateurs représentés dans le total des secondes "
+
+#: google-stats/dashboard/general-stats.php:86
+#: google-stats/posts/back/general-stats.php:104
+#: google-stats/posts/front/general-stats.php:86
+#@ gaw-analytics
+msgid "Overall Page Views"
+msgstr "Vues d'ensemble page"
+
+#: google-stats/dashboard/general-stats.php:89
+#: google-stats/posts/back/general-stats.php:107
+#: google-stats/posts/front/general-stats.php:89
+#@ gaw-analytics
+msgid "Pageviews is the total number of pages viewed. Repeated views of a single page are counted."
+msgstr "Pages vues est le nombre total de pages vues . Plusieurs images d' une même page sont comptés "
+
+#: google-stats/dashboard/general-stats.php:97
+#: google-stats/posts/back/general-stats.php:124
+#: google-stats/posts/front/general-stats.php:97
+#@ gaw-analytics
+msgid "Total Exits"
+msgstr "Nombre de sorties"
+
+#: google-stats/dashboard/general-stats.php:100
+#: google-stats/posts/back/general-stats.php:127
+#: google-stats/posts/front/general-stats.php:100
+#@ gaw-analytics
+msgid "The number of exits from your property."
+msgstr "Le nombre de sorties de votre propriété ."
+
+#: google-stats/dashboard/general-stats.php:108
+#: google-stats/dashboard/realtime-stats.php:41
+#: google-stats/posts/back/general-stats.php:144
+#: google-stats/posts/front/general-stats.php:108
+#@ gaw-analytics
+msgid "New Users"
+msgstr "nouveaux utilisateurs"
+
+#: google-stats/dashboard/general-stats.php:111
+#: google-stats/posts/back/general-stats.php:147
+#: google-stats/posts/front/general-stats.php:111
+#@ gaw-analytics
+msgid "The number of users whose session on your property was marked as a first-time session."
+msgstr "Le nombre d'utilisateurs dont la session sur votre propriété a été marquée comme une session pour la première fois ."
+
+#: google-stats/dashboard/general-stats.php:119
+#: google-stats/posts/back/general-stats.php:164
+#: google-stats/posts/front/general-stats.php:119
+#@ gaw-analytics
+msgid "Total number of hits"
+msgstr "Nombre total de hits"
+
+#: google-stats/dashboard/general-stats.php:122
+#: google-stats/posts/back/general-stats.php:167
+#: google-stats/posts/front/general-stats.php:122
+#@ gaw-analytics
+msgid "Total number of hits sent to Google Analytics. This metric sums all hit types (e.g. pageview, event, timing, etc.)."
+msgstr "Nombre total de hits envoyées à Google Analytics . Ce métriques sommes tous touchés types (par exemple, nombre de pages vues , événement, calendrier , etc ) ."
+
+#: google-stats/dashboard/general-stats.php:134
+#: google-stats/posts/back/general-stats.php:186
+#@ gaw-analytics
+msgid "Percent New Sessions"
+msgstr "Pourcentage de nouvelles sessions"
+
+#: google-stats/dashboard/general-stats.php:137
+#: google-stats/posts/back/general-stats.php:189
+#@ gaw-analytics
+msgid "The percentage of sessions by people who had never visited your property before."
+msgstr "Le pourcentage de sessions par des gens qui n'avaient jamais visité votre propriété avant ."
+
+#: google-stats/dashboard/keywords-stats.php:11
+#: google-stats/posts/back/keywords-stats.php:10
+#: google-stats/posts/front/keywords-stats.php:10
+#@ gaw-analytics
+msgid "Top Ten Keywords"
+msgstr "Top dix mots-clés"
+
+#: google-stats/dashboard/language-stats.php:11
+#: google-stats/posts/back/language-stats.php:10
+#: google-stats/posts/front/language-stats.php:10
+#@ gaw-analytics
+msgid "Top Ten Languages"
+msgstr "Dix langues"
+
+#: google-stats/dashboard/pages-stats.php:8
+#: google-stats/posts/back/pages-stats.php:8
+#: google-stats/posts/front/pages-stats.php:8
+#@ gaw-analytics
+msgid "Top pages by views and exists"
+msgstr "Top pages de vues et existe"
+
+#: google-stats/dashboard/realtime-stats.php:9
+#@ gaw-analytics
+msgid "Real Time Analytics of your site"
+msgstr "Temps réel Analytics de votre site"
+
+#: google-stats/dashboard/realtime-stats.php:19
+#@ gaw-analytics
+msgid "Active Users"
+msgstr "Les utilisateurs actifs"
+
+#: google-stats/dashboard/realtime-stats.php:21
+#@ gaw-analytics
+msgid "The number of users interacting with the property right now."
+msgstr "Le nombre d'utilisateurs qui interagissent avec le droit de propriété maintenant ."
+
+#: google-stats/dashboard/realtime-stats.php:30
+#@ gaw-analytics
+msgid "Direct Users"
+msgstr "Les utilisateurs directs"
+
+#: google-stats/dashboard/realtime-stats.php:32
+#@ gaw-analytics
+msgid "The number of users landed directly."
+msgstr "Le nombre d'utilisateurs a atterri directement ."
+
+#: google-stats/dashboard/realtime-stats.php:43
+#@ gaw-analytics
+msgid "The number of users visit first time on your site/app."
+msgstr "Le nombre d'utilisateurs de visiter première fois sur votre site / application "
+
+#: google-stats/dashboard/realtime-stats.php:52
+#@ gaw-analytics
+msgid "Returning Users"
+msgstr "utilisateurs déjà enregistrés"
+
+#: google-stats/dashboard/realtime-stats.php:54
+#@ gaw-analytics
+msgid "The number of users that are visited before."
+msgstr "Le nombre d'utilisateurs qui sont visités avant ."
+
+#: google-stats/dashboard/realtime-stats.php:63
+#@ gaw-analytics
+msgid "Referral Users"
+msgstr "utilisateurs d'orientation"
+
+#: google-stats/dashboard/realtime-stats.php:65
+#@ gaw-analytics
+msgid "The number of users that are visited from other site/app."
+msgstr "Le nombre d'utilisateurs qui sont visités d'un autre site / application ."
+
+#: google-stats/dashboard/realtime-stats.php:74
+#@ gaw-analytics
+msgid "Organic Users"
+msgstr "utilisateurs organiques"
+
+#: google-stats/dashboard/realtime-stats.php:76
+#@ gaw-analytics
+msgid "The number of users that are visited from search engines."
+msgstr "Le nombre d'utilisateurs qui sont visités par les moteurs de recherche."
+
+#: google-stats/dashboard/realtime-stats.php:85
+#@ gaw-analytics
+msgid "Social Users"
+msgstr "utilisateurs sociaux"
+
+#: google-stats/dashboard/realtime-stats.php:87
+#@ gaw-analytics
+msgid "The number of users that are visited from social sites."
+msgstr "Le nombre d'utilisateurs qui sont visités des sites sociaux ."
+
+#: google-stats/dashboard/referrers-stats.php:11
+#: google-stats/posts/back/referrers-stats.php:11
+#: google-stats/posts/front/referrers-stats.php:11
+#@ gaw-analytics
+msgid "Top Ten Referr stats"
+msgstr "Statistiques Top Ten SOUMISSION"
+
+#: google-stats/dashboard/social-stats.php:10
+#: google-stats/posts/back/social-stats.php:9
+#: google-stats/posts/front/social-stats.php:9
+#: plugin-pages/analytics-wordpress-dashboard.php:52
+#@ gaw-analytics
+msgid "Your site on Social Media"
+msgstr "Votre site sur les médias sociaux"
+
+#: google-stats/posts/front/general-stats.php:134
+#@ gaw-analytics
+msgid "Page Load time"
+msgstr "Temps de chargement de page"
+
+#: google-stats/posts/front/general-stats.php:137
+#@ gaw-analytics
+msgid "Total Page Load Time is the amount of time (in milliseconds) it takes for pages from the sample set to load, from initiation of the pageview (e.g. click on a page link) to load completion in the browser."
+msgstr "Durée totale de chargement des pages est la quantité de temps (en millisecondes) nécessaire pour les pages de l'échantillon mis à charger, à partir du début de la consultation de page (par exemple, cliquer sur un lien de la page ) pour charger l'achèvement dans le navigateur "
+
+#: plugin-pages/analytics-wordpress-dashboard.php:53
+#@ gaw-analytics
+msgid "Filtering Statistics"
+msgstr "Statistiques filtrage"
+
+#: plugin-pages/analytics-wordpress-dashboard.php:60
+#@ gaw-analytics
+msgid "All Statistics "
+msgstr "toutes les statistiques"
+
+#: plugin-pages/analytics-wordpress-dashboard.php:61
+#@ gaw-analytics
+msgid " From "
+msgstr "à partir de"
+
+#: plugin-pages/analytics-wordpress-dashboard.php:63
+#@ gaw-analytics
+msgid " to "
+msgstr "à"
+
+#: plugin-pages/analytics-wordpress-settings.php:168
+#@ gaw-analytics
+msgid "This plugin requires the CURL PHP extension"
+msgstr "Ce plugin nécessite l'extension CURL PHP"
+
+#: plugin-pages/analytics-wordpress-settings.php:176
+#@ gaw-analytics
+msgid "This plugin requires the JSON PHP extension"
+msgstr "Ce plugin nécessite l'extension JSON PHP"
+
+#: plugin-pages/analytics-wordpress-settings.php:186
+#@ gaw-analytics
+msgid "This plugin requires http_build_query()"
+msgstr "Ce plugin nécessite http_build_query ( )"
+
+#: plugin-pages/analytics-wordpress-settings.php:193
+#@ gaw-analytics
+msgid "Profiles"
+msgstr "Profils"
+
+#: plugin-pages/analytics-wordpress-settings.php:193
+#@ gaw-analytics
+msgid "Authenticate"
+msgstr "authentifier"
+
+#: plugin-pages/analytics-wordpress-settings.php:194
+#@ gaw-analytics
+msgid "Basic Settings"
+msgstr "Réglages de base"
+
+#: plugin-pages/analytics-wordpress-settings.php:195
+#@ gaw-analytics
+msgid "Advance Settings"
+msgstr "Paramètres avancés"
+
+#: plugin-pages/analytics-wordpress-settings.php:196
+#@ gaw-analytics
+msgid "Styling"
+msgstr "Styling"
+
+#: plugin-pages/analytics-wordpress-settings.php:197
+#@ gaw-analytics
+msgid "Account Settings"
+msgstr "Paramètres du compte"
+
+#: plugin-pages/analytics-wordpress-settings.php:208
+#@ gaw-analytics
+msgid "Select profiles for Under Posts and Dashboard."
+msgstr "Sélectionnez les profils pour les moins de postes et tableau de bord ."
+
+#: plugin-pages/analytics-wordpress-settings.php:213
+#@ gaw-analytics
+msgid "Under post :"
+msgstr "Sous message:"
+
+#: plugin-pages/analytics-wordpress-settings.php:231
+#@ gaw-analytics
+msgid "Dashboard :"
+msgstr "Tableau de bord:"
+
+#: plugin-pages/analytics-wordpress-settings.php:259
+#@ gaw-analytics
+msgid "Authentication:"
+msgstr "authentification:"
+
+#: plugin-pages/analytics-wordpress-settings.php:265
+#@ gaw-analytics
+msgid "Your Access Code:"
+msgstr "Votre code d'accès :"
+
+#: plugin-pages/analytics-wordpress-settings.php:288
+#@ gaw-analytics
+msgid "Show Analytics to every one :"
+msgstr "Voir Analytics à tous :"
+
+#: plugin-pages/analytics-wordpress-settings.php:296
+#@ gaw-analytics
+msgid "Enable Tracking code :"
+msgstr "Activer le code de suivi :"
+
+#: plugin-pages/analytics-wordpress-settings.php:303
+#@ gaw-analytics
+msgid "Tracking code type :"
+msgstr "Suivi type de code :"
+
+#: plugin-pages/analytics-wordpress-settings.php:307
+#@ gaw-analytics
+msgid "Universal Code"
+msgstr "code Universel"
+
+#: plugin-pages/analytics-wordpress-settings.php:310
+#@ gaw-analytics
+msgid "Tranditional Code"
+msgstr "code de tranditional"
+
+#: plugin-pages/analytics-wordpress-settings.php:316
+#@ gaw-analytics
+msgid "Plugin Name"
+msgstr "Nom plugin"
+
+#: plugin-pages/analytics-wordpress-settings.php:322
+#@ gaw-analytics
+msgid "Plugin Logo URL"
+msgstr "Plugin Logo URL"
+
+#: plugin-pages/analytics-wordpress-settings.php:329
+#@ gaw-analytics
+msgid "Save plugin settings"
+msgstr "Enregistrer les paramètres de plugin"
+
+#: plugin-pages/analytics-wordpress-settings.php:337
+#@ gaw-analytics
+msgid "Select which panels you want to see under the posts/pages and dashboard."
+msgstr "Sélectionnez les panneaux que vous voulez voir dans le cadre des articles / pages et tableau de bord ."
+
+#: plugin-pages/analytics-wordpress-settings.php:342
+#@ gaw-analytics
+msgid "Stats under Posts "
+msgstr "Statistiques de moins de messages"
+
+#: plugin-pages/analytics-wordpress-settings.php:362
+#@ gaw-analytics
+msgid "Backend Statistics:"
+msgstr "Statistiques Backend :"
+
+#: plugin-pages/analytics-wordpress-settings.php:371
+#: plugin-pages/analytics-wordpress-settings.php:474
+#@ gaw-analytics
+msgid "show overall"
+msgstr "montrer globale\n"
+
+#: plugin-pages/analytics-wordpress-settings.php:379
+#: plugin-pages/analytics-wordpress-settings.php:482
+#: plugin-pages/analytics-wordpress-settings.php:585
+#@ gaw-analytics
+msgid "Show Country"
+msgstr "Afficher Pays"
+
+#: plugin-pages/analytics-wordpress-settings.php:387
+#: plugin-pages/analytics-wordpress-settings.php:490
+#: plugin-pages/analytics-wordpress-settings.php:594
+#@ gaw-analytics
+msgid "Show Users"
+msgstr "Afficher les utilisateurs"
+
+#: plugin-pages/analytics-wordpress-settings.php:395
+#: plugin-pages/analytics-wordpress-settings.php:498
+#: plugin-pages/analytics-wordpress-settings.php:602
+#@ gaw-analytics
+msgid "Show Keywords"
+msgstr "Afficher les mots clés"
+
+#: plugin-pages/analytics-wordpress-settings.php:403
+#: plugin-pages/analytics-wordpress-settings.php:506
+#: plugin-pages/analytics-wordpress-settings.php:610
+#@ gaw-analytics
+msgid "Show Social"
+msgstr "Afficher sociale"
+
+#: plugin-pages/analytics-wordpress-settings.php:411
+#: plugin-pages/analytics-wordpress-settings.php:514
+#: plugin-pages/analytics-wordpress-settings.php:620
+#@ gaw-analytics
+msgid "Show Browser Stats"
+msgstr "Statistiques spectacle du navigateur"
+
+#: plugin-pages/analytics-wordpress-settings.php:419
+#: plugin-pages/analytics-wordpress-settings.php:522
+#: plugin-pages/analytics-wordpress-settings.php:628
+#@ gaw-analytics
+msgid "Show Referrer"
+msgstr "Afficher Parrain"
+
+#: plugin-pages/analytics-wordpress-settings.php:427
+#: plugin-pages/analytics-wordpress-settings.php:530
+#: plugin-pages/analytics-wordpress-settings.php:636
+#@ gaw-analytics
+msgid " Date wise Stats"
+msgstr "Date de Statistiques sages"
+
+#: plugin-pages/analytics-wordpress-settings.php:435
+#: plugin-pages/analytics-wordpress-settings.php:538
+#: plugin-pages/analytics-wordpress-settings.php:644
+#@ gaw-analytics
+msgid "Events Tracking"
+msgstr "Suivi des événements"
+
+#: plugin-pages/analytics-wordpress-settings.php:443
+#: plugin-pages/analytics-wordpress-settings.php:546
+#: plugin-pages/analytics-wordpress-settings.php:658
+#@ gaw-analytics
+msgid "Mobile Devices "
+msgstr "Appareils mobiles"
+
+#: plugin-pages/analytics-wordpress-settings.php:451
+#: plugin-pages/analytics-wordpress-settings.php:554
+#: plugin-pages/analytics-wordpress-settings.php:667
+#@ gaw-analytics
+msgid "Languages Stats "
+msgstr "langues Statistiques"
+
+#: plugin-pages/analytics-wordpress-settings.php:459
+#: plugin-pages/analytics-wordpress-settings.php:562
+#: plugin-pages/analytics-wordpress-settings.php:676
+#@ gaw-analytics
+msgid "Show Pages"
+msgstr "Afficher les pages"
+
+#: plugin-pages/analytics-wordpress-settings.php:465
+#@ gaw-analytics
+msgid "Front End Statistics:"
+msgstr "Avant Statistiques Fin:"
+
+#: plugin-pages/analytics-wordpress-settings.php:568
+#@ gaw-analytics
+msgid "Dashboard Statistics:"
+msgstr "Statistiques Tableau de bord:"
+
+#: plugin-pages/analytics-wordpress-settings.php:577
+#@ gaw-analytics
+msgid "Show Quick Stats"
+msgstr "Voir Statistiques rapides"
+
+#: plugin-pages/analytics-wordpress-settings.php:682
+#@ gaw-analytics
+msgid "Which Roles can access the stats :"
+msgstr "Quels rôles peuvent accéder aux statistiques :"
+
+#: plugin-pages/analytics-wordpress-settings.php:694
+#@ gaw-analytics
+msgid "selected"
+msgstr ""
+
+#: plugin-pages/analytics-wordpress-settings.php:712
+#@ gaw-analytics
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: plugin-pages/analytics-wordpress-settings.php:725
+#@ gaw-analytics
+msgid "Panel Background color"
+msgstr "Couleur panneau de fond"
+
+#: plugin-pages/analytics-wordpress-settings.php:731
+#@ gaw-analytics
+msgid "Panel text color"
+msgstr "Panneau de la couleur du texte"
+
+#: plugin-pages/analytics-wordpress-settings.php:746
+#@ gaw-analytics
+msgid "Your PHP version is"
+msgstr "Votre version de PHP est"
+
+#: plugin-pages/analytics-wordpress-settings.php:753
+#@ gaw-analytics
+msgid "version is "
+msgstr "version est"
+
+#: plugin-pages/analytics-wordpress-settings.php:757
+#@ gaw-analytics
+msgid "was disabled."
+msgstr "a été désactivé ."
+
+#: plugin-pages/analytics-wordpress-settings.php:764
+#@ gaw-analytics
+msgid "CLIENT ID:"
+msgstr ""
+
+#: plugin-pages/analytics-wordpress-settings.php:770
+#@ gaw-analytics
+msgid "CLIENT SECRET:"
+msgstr ""
+
+#: plugin-pages/analytics-wordpress-settings.php:776
+#@ gaw-analytics
+msgid "API KEY:"
+msgstr ""
+
+#: plugin-pages/analytics-wordpress-settings.php:795
+#@ gaw-analytics
+msgid " Logout From Google"
+msgstr "Se déconnecter de Google"
+
