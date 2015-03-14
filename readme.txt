@@ -1,5 +1,5 @@
 === Email Form Under Post  ===
-Contributors: Khubbaib
+Contributors: khubbaib
 Donate link: http://khubbaib.com/
 Tags: post, email, mandrill,  email form, mandrill stats
 Requires at least: 3.0.1
