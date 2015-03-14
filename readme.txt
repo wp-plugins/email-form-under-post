@@ -30,7 +30,21 @@ The ONLY Plugin Brings Per Post Email form and send email through mandrill or si
 *  WP editor for writing message
 *  Send emails through ajax without page refresh
 *  Localization Ready with French language (You can add any language in lang folder)
+*  Multisite compatible
+
 > Premium Version will be lanched very soon with bunch of features.
+
+**What will be in pro version ?**
+
+*  Set custom post types to show Form.
+*  Exclude sepecific posts to not show form under that post.
+*  Show form for sepecific roles.
+*  Insert Form anywhere using simple short code.
+*  Use form for woocommerce to send inquiry for any product.
+*  Show All emails with posts in **wp-admin** for stats.
+
+
+
 
 == Installation ==
 
