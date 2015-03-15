@@ -1,10 +1,10 @@
-=== Email Form Under Post  ===
+﻿=== Email Form Under Post  ===
 Contributors: khubbaib
 Donate link: http://khubbaib.com/
 Tags: post, email, mandrill,  email form, mandrill stats
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,12 +32,14 @@ The ONLY Plugin Brings Per Post Email form and send email through mandrill or si
 *  Localization Ready with French language (You can add any language in lang folder)
 *  Multisite compatible
 
-> Premium Version will be lanched very soon with bunch of features.
-
-**What will be in pro version ?**
+**Whats new in 1.0.1 ?**
 
 *  Set custom post types to show Form.
 *  Exclude sepecific posts to not show form under that post.
+
+> Premium Version will be lanched very soon with bunch of features.
+
+**What will be in pro version ?**
 *  Show form for sepecific roles.
 *  Insert Form anywhere using simple short code.
 *  Use form for woocommerce to send inquiry for any product.
@@ -92,6 +94,10 @@ star mean *
 
 = 1.0.0 - 2015-03-13 =
 * Initial Release.
+= 1.0.1 - 2015-03-16
+*Remove css bugs
+*Add form for custom post types
+*exclude post by post id to hide form
 
 == Donation ==
 
