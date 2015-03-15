@@ -32,14 +32,12 @@ The ONLY Plugin Brings Per Post Email form and send email through mandrill or si
 *  Localization Ready with French language (You can add any language in lang folder)
 *  Multisite compatible
 
-**Whats new in 1.0.1 ?**
-
-*  Set custom post types to show Form.
-*  Exclude sepecific posts to not show form under that post.
-
 > Premium Version will be lanched very soon with bunch of features.
 
 **What will be in pro version ?**
+
+*  Set custom post types to show Form.
+*  Exclude sepecific posts to not show form under that post.
 *  Show form for sepecific roles.
 *  Insert Form anywhere using simple short code.
 *  Use form for woocommerce to send inquiry for any product.
@@ -94,10 +92,6 @@ star mean *
 
 = 1.0.0 - 2015-03-13 =
 * Initial Release.
-= 1.0.1 - 2015-03-16
-*Remove css bugs
-*Add form for custom post types
-*exclude post by post id to hide form
 
 == Donation ==
 
