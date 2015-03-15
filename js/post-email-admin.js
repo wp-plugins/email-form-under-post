@@ -11,4 +11,5 @@ jQuery(document).ready(function($){
         }
 
     });
+    $(".fancy-choose").chosen({no_results_text: "Oops, nothing found!"});
 });

@@ -194,18 +194,21 @@ class Post_Main{
      * @since 1.0.0
      */
     public function post_email_metabox() {
-            
+        $post_types = get_option( 'post_email_show_posts_form' );    
+        if(!empty( $post_types )){
+                foreach ( $post_types as $post_type ) {  
                     add_meta_box('post_email_add', 
                         'Post email Settings.', 
                         array(
                             'Post_Main',// class object
                             'post_email_new_email_address'//callback functions
                         ), 
-                        'post',// selected posts types 
+                        $post_type,// selected posts types 
                         'normal',  
                         'high'      
                     ); 
-                
+          }
+      }      
             
     }
     public static function post_email_new_email_address($object, $box)
@@ -523,6 +526,7 @@ class Post_Main{
     public function post_email_admin_styles( ) {
             
             wp_enqueue_style( 'post-email-bootstrap', plugins_url( 'css/bootstrap.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
+            wp_enqueue_style( 'post-email-choosen', plugins_url( 'css/chosen.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
             wp_enqueue_style( 'post-email-style', plugins_url( 'css/post-email-style.css', dirname(__FILE__)),false, POST_EMAIL_VERSION);
              
     }
@@ -539,6 +543,7 @@ class Post_Main{
             wp_enqueue_script ( 'jquery' );
             wp_enqueue_script ( 'post_email_graphs', 'https://www.google.com/jsapi', false, POST_EMAIL_VERSION );
             wp_enqueue_script ( 'post_email_bootstrap', plugins_url('js/bootstrap.js', dirname(__FILE__)), false, POST_EMAIL_VERSION);
+            wp_enqueue_script ( 'post_email_choosen', plugins_url('js/chosen.jquery.min.js', dirname(__FILE__)), false, POST_EMAIL_VERSION);
             wp_enqueue_script ( 'post_email_adminjs', plugins_url('js/post-email-admin.js', dirname(__FILE__)), false, POST_EMAIL_VERSION);
 
     }
@@ -690,7 +695,19 @@ class Post_Main{
         ob_start();
 
         if ( is_singular()) {
-           
+          $post_type = get_post_type( $post->ID );
+           if( is_array( get_option( 'post_email_show_posts_form' )) and !in_array( $post_type, get_option( 'post_email_show_posts_form' ) ) ) {
+
+                return $content;
+            }
+
+            if ( is_array( get_option( 'post-email-ex-posts' ) ) ) {
+                    
+                if ( in_array( $post->ID, get_option( 'post-email-ex-posts' ) ) ) {
+                            
+                    return $content;
+                }
+            }
         ?>
 
         <div class="col-md-12">
@@ -785,6 +802,7 @@ class Post_Main{
       update_option( 'post_email_success','You Email has been sent' );
       update_option( 'post_email_error','Email sending Fails' );
       update_option( 'post_email_template','khubbaib' );
+      update_option( 'post-email-ex-posts','0' );
         global $wpdb;
 
         $table_name = $wpdb->prefix . "postmails";

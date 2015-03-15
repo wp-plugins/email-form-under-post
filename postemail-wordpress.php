@@ -3,7 +3,7 @@
 Plugin Name: Email form under post
 Plugin URI: http://khubbaib.com/
 Description: Add Email form under every post and send email either mandrill or simply your own server.
-Version: 1.0.0
+Version: 1.0.1
 Author: Web solution soft
 Author URI:
 Text Domain: post-email
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     }  
     if( ! defined( 'POST_EMAIL_VERSION' )){ 
         
-        define( 'POST_EMAIL_VERSION', '1.0.0');
+        define( 'POST_EMAIL_VERSION', '1.0.1');
     }
     if( ! defined( 'POST_EMAIL_MINPHP_VERSION' )){ 
         
