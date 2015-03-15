@@ -210,7 +210,7 @@
           <tr>
                 <td>Exclude Posts to not show Form </td>
                 <td>
-                  <input type="text" name="no-forms" value="<?php echo implode( ',', get_option('post-email-ex-posts') ); ?>" style="width:600px;">
+                  <input type="text" name="no-forms" <?php if(is_array(get_option('post-email-ex-posts'))){ ?> value="<?php echo implode( ',', get_option('post-email-ex-posts') ); ?>" <?php } ?> style="width:600px;">
                   <p class="description">Posts IDS separate with comma i-e (25,27)</p>
                 </td>
           </tr>
