@@ -623,11 +623,6 @@
 .glyphicon-tree-deciduous:before {
   content: "\e200";
 }
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
 
 .pre-scrollable {
   max-height: 340px;
