@@ -8,11 +8,12 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Only Plugin Brings Per Post Email form and send email through mandrill or simple mail function set through WP admin. This plugin can be used for various purpose i-e for reviews,for contact with post owner,for inquiry about something. It will send the post link with email to indentify from which post user contact.
+The Only Plugin Brings Per Post Email form and send email through mandrill or simple mail function set through WP admin.
+
 
 == Description ==
 
-[Email Form Under Post](http://khubbaib.com/) - Bring email form under post and send define number of message to define email address. Suppose you set 5 for hello world world post when five people contact throgh that post email will be sent to define email address with 5 Contacts. Only one email will be send instead of 5 so its easy to read.
+[Email Form Under Post](http://khubbaib.com/) - Bring email form under post and send define number of message to define email address. Suppose you set 5 for hello world post when five people contact throgh that post email will be sent to define email address with 5 Contacts. Only one email will be send instead of 5 so its easy to read.
 
 
 **[PRO Version](http://khubbaib.com/)** will be lanch soon. Currently it support only post but in pro version its can be set which post type you want to show form and exclude posts,pages.
