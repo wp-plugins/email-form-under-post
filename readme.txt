@@ -8,7 +8,7 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The ONLY Plugin Brings Per Post Email form and send email through mandrill or simple mail function set through WP admin.
+The Only Plugin Brings Per Post Email form and send email through mandrill or simple mail function set through WP admin. This plugin can be used for various purpose i-e for reviews,for contact with post owner,for inquiry about something. It will send the post link with email to indentify from which post user contact.
 
 == Description ==
 
