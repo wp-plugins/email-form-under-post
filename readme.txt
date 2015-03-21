@@ -55,13 +55,15 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Search email which sent through mandrill.
 *  Custom posts type suported select any post type and show form under it
 *  Exlude Any post to hide form under it.
+*  Bug Fix credits goes to ** Hamid Ashraf**
 
-** Live preview **
+**Live preview**
 
 [Live preview](http://websolutionsoft.com/demo/wp-admin/)
 
 * Username : demo
 * Password : demo
+
 
 == Installation ==
 
