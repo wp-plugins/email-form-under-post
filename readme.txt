@@ -45,7 +45,7 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Set custom post types to show Form.
 *  Exclude sepecific posts to not show form under that post.
 
-** Whats new in 1.0.2?**
+**Whats new in 1.0.2?**
 *  Add/Delete Email template for mandrill Within **WP-admin**
 *  Add/Download export email stats within given date range.
 *  Send Email to any Wordpress user. System will show all emails in dropdown you just need to add message and sent email.
