@@ -14,10 +14,7 @@ class Post_Main{
      */
     function __construct() {
 
-        add_action( 'plugin_action_links', array( 
-                    &$this,
-                    'post_email_plugin_links'
-                ),10,2);
+        
         add_action( 'admin_menu', array(
                     &$this,
                     'post_email_admin_menus'
@@ -75,17 +72,21 @@ class Post_Main{
                         &$this,
                         'post_email_frontend'
                 ));
+        add_action( 'plugin_action_links', array( 
+                    &$this,
+                    'post_email_plugin_links'
+                ),10,2);
         add_action( 'save_post', array(
-                                        &$this,
-                                        'save_email_address'
-                                    ), 10, 2 );
+                                  &$this,
+                                  'post_email_save_email_address'
+                              ), 10, 2 );
 
         
 
         
     }
 
-    public function save_email_address($post_id, $post)
+    public function post_email_save_email_address($post_id, $post)
     {
         $post_type = get_post_type_object( $post->post_type );
 
@@ -236,6 +237,7 @@ class Post_Main{
         </p>
         <?php
     }
+
     public function mandrill_emailer_phpmailer_init( $phpmailer ) {
         $phpmailer->isSMTP();
         $phpmailer->SMTPAuth = true;
@@ -278,6 +280,41 @@ class Post_Main{
     {
         $plugin_dir = basename(dirname(dirname( __FILE__ )));
         load_plugin_textdomain( 'post-email', false , $plugin_dir . '/lang/');
+    }
+    public function post_email_send_newsletter( $content,$from,$subject ,$newsletter_emails){
+      try {
+            $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
+            
+            $message = array(
+                'html' => $content,
+                'text' => $content,
+                'subject' => $subject,
+                'from_email' => $from,
+                'from_name' => get_bloginfo('name'),
+
+                
+                'to' => array(
+                         
+                         array(
+                              'email' => $newsletter_emails,
+                              'type' => 'to'
+                            ),
+                                                 
+                ),
+                
+                'important' => true,
+                
+            );
+            $result = $mandrill->messages->send($message);
+            
+            return $result;
+            
+          } catch(Mandrill_Error $e) {
+              // Mandrill errors are thrown as exceptions
+              echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+              // A mandrill error occurred: Mandrill_Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+              throw $e;
+          }      
     }
     public function sendemail_under_post()
     {
@@ -357,7 +394,7 @@ class Post_Main{
              $to = get_the_author_meta('user_email',$user_id);
             }
             if(!$subject){
-             $subject = 'Email from'.$email;
+             $subject = 'Email from '. $email;
             }
             if(!get_post_meta( $post_id , 'email_delay_key', true )){
               $email_delay = 10;
@@ -385,21 +422,29 @@ class Post_Main{
                      } 
                     
                     $email_params   = array(
-                                                array( 'name' => 'ALL_CONTACT','content' => $con ),
                                                 
+                                                array( 'name' => 'ALL_CONTACT','content' => $con ),
                                                 
                                             );
                     if( get_option( 'post_email_api_need' ) == 1 ){
 
-                        $mail = $this->mandrill_send_mail( $to, $to_name, $template, $subject, $email_params );
-                        $mail = $this->mandrill_send_mail( $hidden_to, $to_name, $template, $subject, $email_params );
+                        $mail = $this->post_email_mandrill_send_mail( $to, $to_name, $template, $subject, $email_params );
+                        if( $hidden_to ){
+                            
+                            $mail = $this->post_email_mandrill_send_mail( $hidden_to, $to_name, $template, $subject, $email_params );
+                        }
                     }
                     else if( get_option( 'post_email_api_need' ) == 0 ){
                       $headers ='';
                       $headers .= 'From: '.get_option( 'mandrill_emailer_from_name' ).' <'.get_option( 'mandrill_emailer_from_email' ).'>' . "\r\n";
                       $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
                       $mail = mail($to,$subject,$con, $headers);
-                      $h1=1;
+                       
+                       if( $hidden_to ){
+                          
+                          $mail = mail($hidden_to,$subject,$con, $headers);
+                        
+                        }
                     }
                     if($mail){
                        echo '<div class="alert alert-success" role="alert">'.get_option( 'post_email_success' ).'</div>';
@@ -426,7 +471,7 @@ class Post_Main{
     }
     
     /**
-     * Add links in plugin oage to perform direct action
+     * Add links in plugin Page to perform direct action
      *
      * @access public
      * @param array $links , file $file for plugin reffernce
@@ -435,13 +480,13 @@ class Post_Main{
      */
     public function post_email_plugin_links( $links, $file ) {
             
-            static $cureent_plugin;
+            static $current;
             
-            if ( empty( $cureent_plugin ) ) 
+            if ( empty( $current ) ) 
 
-                $cureent_plugin = 'post-email/postemail-wordpress.php';
+                $current = 'mandrillwp/postemail-wordpress.php';
 
-            if ( $file == $cureent_plugin ) {
+            if ( $file == $current ) {
 
                 $settings_link = '<a href="' . admin_url( 'admin.php?page=post-email-settings' ) . '">' . __( 'Settings', 'post-email' ) . '</a> | <a href="' . admin_url("admin.php?page=post-email-dashboard") . '">' . __( 'Dashboard', 'post-email' ) . '</a>';
 
@@ -524,11 +569,11 @@ class Post_Main{
      * @since 1.0.0
      */
     public function post_email_admin_styles( ) {
-            
-            wp_enqueue_style( 'post-email-bootstrap', plugins_url( 'css/bootstrap.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
+            wp_enqueue_style( 'datepicker-theme',plugins_url( 'css/bootstrap.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION );
+            wp_enqueue_style( 'post-email-bootstrap', plugins_url( 'css/jquery.datetimepicker.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
             wp_enqueue_style( 'post-email-choosen', plugins_url( 'css/chosen.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
             wp_enqueue_style( 'post-email-style', plugins_url( 'css/post-email-style.css', dirname(__FILE__)),false, POST_EMAIL_VERSION);
-             
+            wp_enqueue_style( 'wp-color-picker' ); 
     }
     /**
      * Add Scripts in admin head
@@ -541,6 +586,8 @@ class Post_Main{
     public function post_email_admin_scripts(  ) {
            
             wp_enqueue_script ( 'jquery' );
+            wp_enqueue_script ( 'wp-color-picker' );
+            wp_enqueue_script ( 'jquery-datepicker',plugins_url('js/jquery.datetimepicker.js', dirname(__FILE__)), false, POST_EMAIL_VERSION );
             wp_enqueue_script ( 'post_email_graphs', 'https://www.google.com/jsapi', false, POST_EMAIL_VERSION );
             wp_enqueue_script ( 'post_email_bootstrap', plugins_url('js/bootstrap.js', dirname(__FILE__)), false, POST_EMAIL_VERSION);
             wp_enqueue_script ( 'post_email_choosen', plugins_url('js/chosen.jquery.min.js', dirname(__FILE__)), false, POST_EMAIL_VERSION);
@@ -563,6 +610,14 @@ class Post_Main{
         wp_register_script ( 'post_email_front_script', plugins_url('js/post-email.js', dirname(__FILE__)), false, POST_EMAIL_VERSION);
         wp_localize_script ( 'post_email_front_script','ajax_params', $ajax_array);
     }
+    /**
+     * Post email front end scripts
+     *
+     * @access public
+     * @param void
+     * @return void
+     * @since 1.0.0
+     */
     public function post_email_front_scripts( )
     {
        
@@ -584,15 +639,12 @@ class Post_Main{
     public function post_email_front_styles( )
     {
         wp_enqueue_style( 'post-email-front-bootstrap', plugins_url( 'css/bootstrap.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
-    }
-    public static function post_email_dashboard_page() {
-        
-        require_once POST_EMAIL_ROOT_PATH . '/plugin-pages/analytics-wordpress-dashboard.php';
-            
+        wp_enqueue_style( 'post-email-front-style', plugins_url( 'css/post-form.css', dirname(__FILE__) ),false, POST_EMAIL_VERSION);
     }
     
+    
     /**
-     * show profile and authenticate Alerts
+     * show API Alerts
      *
      * @access public
      * @param void
@@ -624,11 +676,148 @@ class Post_Main{
       
       
     }
+    /**
+     * Add mandrill template 
+     *
+     * @access public
+     * @param name,code,text,publish
+     * @return array
+     * @since 1.0.0
+     */
+    public function post_email_add_template($name,$code,$text,$publish){
+        try {
+            $mandrill = new Mandrill(get_option( 'mandrill_emailer_api_key' ));
+            $result = $mandrill->templates->add($name, '', '', '', $code, $text, $publish,'');
+            //print_r($result);
+            return $result;
+            
+        } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+            throw $e;
+        }
+    }
+    /**
+     * delete mandrill template 
+     *
+     * @access public
+     * @param name
+     * @return array
+     * @since 1.0.0
+     */
+    public function post_email_all_email($search,$limit){
+         try {
+              
+              $mandrill = new Mandrill(get_option( 'mandrill_emailer_api_key' ));
+              
+              $result = $mandrill->messages->search($search, '', '', '', '', '', $limit);
+              return $result;
+        
+            } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+            throw $e;
+        }
+    }
+    /**
+     * delete mandrill template 
+     *
+     * @access public
+     * @param name
+     * @return array
+     * @since 1.0.0
+     */
+    public function post_email_delete_template($name){
+         try {
+              
+              $mandrill = new Mandrill(get_option( 'mandrill_emailer_api_key' ));
+              
+              $result = $mandrill->templates->delete($name);
+              
+              return $result;
+        
+            } catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+            throw $e;
+        }
+    }
+    /**
+     * Export job 
+     *
+     * @access public
+     * @param void
+     * @return array
+     * @since 1.0.0
+     */
+    public function post_email_epxort( ){
+      
+            try {
+                
+                $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
+                $result = $mandrill->exports->getList();
+                return $result;
+                
+              } catch(Mandrill_Error $e) {
+                // Mandrill errors are thrown as exceptions
+                echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+                // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+                throw $e;
+            }
+    }
+    /**
+     * Add an Export job 
+     *
+     * @access public
+     * @param void
+     * @return array
+     * @since 1.0.0
+     */
+    public function post_email_add_epxort( $notify_email,$states ){
+      
+        try {
+              $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
+              
+              $result = $mandrill->exports->activity($notify_email, '', '', array(), array(), $states, array() );
+              return $result;
+              
+            } catch(Mandrill_Error $e) {
+                // Mandrill errors are thrown as exceptions
+                echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+                // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+                throw $e;
+            }
+    }
+    /**
+     * All mandrill templates
+     *
+     * @access public
+     * @param void
+     * @return array
+     * @since 1.0.0
+     */
+    public function post_email_templates() {
+        try {   
+              // Init Mandrill API
+              $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
+               $result = $mandrill->templates->getList();
+              return $result;
+          }
+          catch(Mandrill_Error $e) {
+            // Mandrill errors are thrown as exceptions
+              echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+              throw $e;
+          }
+    }
     public function post_email_senders(){
         try {   
             // Init Mandrill API
             $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
-             $result = $mandrill->users->senders();
+             $result = $mandrill->senders->getList();
             return $result;
         }
         catch(Mandrill_Error $e) {
@@ -638,7 +827,29 @@ class Post_Main{
             throw $e;
         }
     }
-    public function mandrill_send_mail( $to, $to_name, $template, $subject, $data ) {
+    public function post_email_domains(){
+        try {   
+            // Init Mandrill API
+            $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
+             $result = $mandrill->urls->getList();
+            return $result;
+        }
+        catch(Mandrill_Error $e) {
+    // Mandrill errors are thrown as exceptions
+            echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+            // A mandrill error occurred: Mandrill_Invalid_Key - Invalid API key
+            throw $e;
+        }
+    }
+    /**
+     * Send email via mandrill template 
+     *
+     * @access public
+     * @param to,toname,template,subject,data
+     * @return true/false
+     * @since 1.0.0
+     */
+    public function post_email_mandrill_send_mail( $to, $to_name, $template, $subject, $data ) {
         try {   
             // Init Mandrill API
             $mandrill = new Mandrill( get_option( 'mandrill_emailer_api_key' ) );
@@ -683,11 +894,11 @@ class Post_Main{
         }
     }
     /**
-     * show Stats in frontend
+     * Show Form in frontend
      *
      * @access public
-     * @param void
-     * @return void
+     * @param content
+     * @return content
      * @since 1.0.0
      */
     public function post_email_frontend( $content ) {
@@ -709,13 +920,18 @@ class Post_Main{
                 }
             }
         ?>
-
-        <div class="col-md-12">
-            <div class="well well-sm">
+        <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal" <?php if(get_option('post_button_background')){ ?> style="background:<?php echo get_option('post_button_background'); ?>"<?php } ?>> <?php _e( get_option('post_button_text') );?></a>
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header" <?php if(get_option('post_modal_header_background')){ ?> style="background:<?php echo get_option('post_modal_header_background'); ?>"<?php } ?>>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <p class="modal-title"><?php _e('Contact with post owner') ?></p>
+        </div>
+        <div class="modal-body" <?php if(get_option('post_form_background')){ ?> style="background:<?php echo get_option('post_form_background'); ?>"<?php } ?>>
             <form name="postemail" id="postemail">
             <div class="result" style="display:none"></div>
-                <div class="row">
-                    <div class="col-md-12">
+                
                     <div class="loading" style="display:none">
                         <img src="<?php echo plugins_url('images/loading.gif',dirname(__FILE__));;?>">
                     </div>
@@ -748,46 +964,35 @@ class Post_Main{
                                             'quicktags'     => array("buttons"=>"strong"),
                                             'textarea_name' => "message",
                                             'tinymce'       => false,
+                                            'textarea_rows' => 6,
+                                            
                                         );
                                 wp_editor( '', 'message', $settings);
                             ?>
-                                <!-- <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="Message"></textarea> -->
-                            
                         </div> 
                         <div class="form-group">
-                            <?php //echo recaptcha_get_html(PUB_KEY); ?>
+                            
                              <div class="g-recaptcha" data-sitekey="<?php echo PUB_KEY;?>"></div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-primary pull-right" id="send_mail">
-                            Send Message
-                        </button>
-                    </div>
-                </div>
+                   
+               
                 </form>
-            </div>
-        </div>
-
+            
+      </div><!-- End of Modal body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e('Cancel','post-email') ?></button>
+          <button type="button" class="btn pull-right btn-custom" id="send_mail">
+              <?php _e('Send Email','post-email') ?>
+          </button>
+      </div>
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- End of Modal -->  
         <?php
         $content .= ob_get_contents();
         ob_get_clean();
     }
         return $content;
-    }
-    
-    
-    /**
-     * Show ananlytics under post with ajax request
-     *
-     * @access public
-     * @param void
-     * @return void
-     * @since 1.0.0
-     */
-    public static function post_email_admin_single_analytics() {
-            
     }
     /**
      * Save options after activate plugin
@@ -802,7 +1007,8 @@ class Post_Main{
       update_option( 'post_email_success','You Email has been sent' );
       update_option( 'post_email_error','Email sending Fails' );
       update_option( 'post_email_template','khubbaib' );
-      update_option( 'post-email-ex-posts','0' );
+      update_option( 'post-email-ex-posts',array('0') );
+      update_option( 'post_button_text','Contact with post author' );
         global $wpdb;
 
         $table_name = $wpdb->prefix . "postmails";

@@ -12,4 +12,8 @@ jQuery(document).ready(function($){
 
     });
     $(".fancy-choose").chosen({no_results_text: "Oops, nothing found!"});
+    jQuery('.pick-date').datetimepicker({
+            format:'Y-m-d H:i'
+    });
+    $('.color-pick').wpColorPicker();
 });
