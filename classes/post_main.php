@@ -484,7 +484,7 @@ class Post_Main{
             
             if ( empty( $current ) ) 
 
-                $current = 'mandrillwp/postemail-wordpress.php';
+                $current = 'email-form-under-post/postemail-wordpress.php';
 
             if ( $file == $current ) {
 
