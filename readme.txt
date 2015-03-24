@@ -57,6 +57,11 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Exlude Any post to hide form under it.
 *  Bug Fix credits goes to **Hamid Ashraf**
 
+**Whats new in 1.0.3?**
+* Send New user notifications with mandrill
+* Add example email template for new user notification/email form
+* CSS bug removed
+
 **Live preview**
 
 [Live preview](http://websolutionsoft.com/demo/wp-admin/)
