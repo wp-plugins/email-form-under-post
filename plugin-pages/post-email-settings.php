@@ -17,6 +17,7 @@
     update_option( 'mandrill_emailer_from_name',    sanitize_text_field( $_POST['mandrill_emailer_from_name'] ));
     update_option( 'mandrill_emailer_from_email',   sanitize_text_field( $_POST['mandrill_emailer_from_email'] ));
     update_option( 'post_email_template',           sanitize_text_field( $_POST['post_email_template'] ));
+    update_option( 'mandrill_emailer_new_user_template',   sanitize_text_field( $_POST['mandrill_emailer_new_user_template'] ));
     update_option( 'mandrill_emailer_from_email',   sanitize_text_field( $_POST['mandrill_emailer_from_email'] ));
    
     $update_msg = '<p>Information has been Saved.</p>';
@@ -174,6 +175,13 @@
             <td width="200"><?php _e( 'Mandrill Email Template :', 'post-email' ); ?></td>
               <td width="877">
                 <input type="text" style="width:600px;" name="post_email_template" value="<?php echo get_option('post_email_template') ?>">
+
+              </td>
+          </tr>
+          <tr class="mandrill-hide" <?php if( get_option( 'post_email_api_need' ) == 0 ) { ?>style="display:none;"<?php } ?>>
+            <td width="200"><?php _e( 'New User Email Template :', 'post-email' ); ?></td>
+              <td width="877">
+                <input type="text" style="width:600px;" name="mandrill_emailer_new_user_template" value="<?php echo get_option('mandrill_emailer_new_user_template') ?>">
 
               </td>
           </tr>
