@@ -3,9 +3,9 @@
 Plugin Name: Mandrill For WordPress - Email form under Post
 Plugin URI: http://khubbaib.com/
 Description: Add Email form under every post and send email either mandrill or simply your own server.
-Version: 1.0.3
+Version: 1.0.4
 Author: Web solution soft
-Author URI:
+Author URI: http://websolutionsoft.com/
 Text Domain: post-email
 Domain Path: lang
 */

@@ -4,7 +4,7 @@ Donate link: http://khubbaib.com/
 Tags: post, email, mandrill,  email form, mandrill stats,mandrill-template,mandrill-export
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,7 +57,7 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Exlude Any post to hide form under it.
 *  Bug Fix credits goes to **Hamid Ashraf**
 
-**Whats new in 1.0.3?**
+**Whats new in 1.0.4?**
 
 * Send New user notifications with mandrill
 * Add example email template for new user notification/email form
