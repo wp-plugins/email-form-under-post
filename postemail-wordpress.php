@@ -63,6 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     
     $post_main->post_email_add_alerts();
     if( get_option( 'post_email_api_need' ) == 1 ){
+        if (!function_exists('wp_new_user_notification')){
         function wp_new_user_notification( $user_id, $plaintext_pass = '' ) {
             $post_main = new Post_Main();
             
@@ -97,6 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
              
              $to_name = $user->first_name . " " . $user->last_name;
             $post_main->post_email_mandrill_send_mail( $user->user_email, $to_name, $template, $subject, $email_params );
+        }
         }
     }
     register_activation_hook( __FILE__, array( $post_main, 'post_email_install_plugin' ) );
