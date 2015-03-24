@@ -58,6 +58,7 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Bug Fix credits goes to **Hamid Ashraf**
 
 **Whats new in 1.0.3?**
+
 * Send New user notifications with mandrill
 * Add example email template for new user notification/email form
 * CSS bug removed
