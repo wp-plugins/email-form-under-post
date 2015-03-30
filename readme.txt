@@ -42,9 +42,9 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 
 **Whats new in 1.0.1 ?**
 
-*Remove css bugs
-*Add form for custom post types
-*exclude post by post id to hide form
+*Remove css bugs.
+*Add form for custom post types.
+*exclude post by post id to hide form.
 
 **Whats new in 1.0.2?**
 
