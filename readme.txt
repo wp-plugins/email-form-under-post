@@ -42,10 +42,11 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 
 **Whats new in 1.0.1 ?**
 
-*  Set custom post types to show Form.
-*  Exclude sepecific posts to not show form under that post.
+*Remove css bugs.
+*Add form for custom post types.
+*exclude post by post id to hide form.
 
-**Whats new in 1.0.2?**
+**Whats new in 1.0.2 ?**
 
 
 *  Add/Delete Email template for mandrill Within **WP-admin**
@@ -59,9 +60,9 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 
 **Whats new in 1.0.4?**
 
-* Send New user notifications with mandrill
-* Add sample email template for new user notification/email form
-* CSS bug removed
+* Send New user notifications with mandrill.
+* Add sample email template for new user notification/email form.
+* CSS bug removed.
 
 **Live preview**
 
