@@ -120,9 +120,9 @@ star mean *
 
 = 1.0.1 - 2015-03-16
 
-*Remove css bugs
-*Add form for custom post types
-*exclude post by post id to hide form
+*Remove css bugs.
+*Add form for custom post types.
+*exclude post by post id to hide form.
 
 = 1.0.2 - 2015-03-21
 
