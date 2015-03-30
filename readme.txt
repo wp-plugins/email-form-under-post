@@ -60,7 +60,7 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 **Whats new in 1.0.4?**
 
 * Send New user notifications with mandrill
-* Add example email template for new user notification/email form
+* Add sample email template for new user notification/email form
 * CSS bug removed
 
 **Live preview**
@@ -119,14 +119,22 @@ star mean *
 * Initial Release.
 
 = 1.0.1 - 2015-03-16
+
 *Remove css bugs
 *Add form for custom post types
 *exclude post by post id to hide form
 
 = 1.0.2 - 2015-03-21
+
 *  Add/Delete Email template for mandrill Within **WP-admin**
 *  Add/Download export email stats within given date range.
 *  Send Email to any Wordpress user. System will show all emails in dropdown you just need to add message and sent email.
+
+= 1.0.4 - 2015-03-24
+
+* Send New user notifications with mandrill
+* Add sample email template for new user notification/email form
+* CSS bug removed
 
 == Donation ==
 
