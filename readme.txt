@@ -38,7 +38,7 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Change the popup colors to match your branding.
 *  Search email which sent through mandrill.
 *  Custom posts type suported select any post type and show form under it
-*  Exclude any post to hide form under it.
+*  Exlude Any post to hide form under it.
 
 **Whats new in 1.0.1 ?**
 
@@ -46,7 +46,7 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *Add form for custom post types.
 *exclude post by post id to hide form.
 
-**Whats new in 1.0.2?**
+**Whats new in 1.0.2 ?**
 
 
 *  Add/Delete Email template for mandrill Within **WP-admin**
@@ -55,14 +55,14 @@ Only plugin which have all mandrill functionality as well as Email form under ev
 *  Change the popup colors to match your branding.
 *  Search email which sent through mandrill.
 *  Custom posts type suported select any post type and show form under it
-*  Exlude Any post to hide form under it.
+*  Exclude any post to hide form under it.
 *  Bug Fix credits goes to **Hamid Ashraf**
 
 **Whats new in 1.0.4?**
 
-* Send New user notifications with mandrill
-* Add sample email template for new user notification/email form
-* CSS bug removed
+* Send New user notifications with mandrill.
+* Add sample email template for new user notification/email form.
+* CSS bug removed.
 
 **Live preview**
 
@@ -121,9 +121,9 @@ star mean *
 
 = 1.0.1 - 2015-03-16
 
-*Remove css bugs
-*Add form for custom post types
-*exclude post by post id to hide form
+*Remove css bugs.
+*Add form for custom post types.
+*exclude post by post id to hide form.
 
 = 1.0.2 - 2015-03-21
 

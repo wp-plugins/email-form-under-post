@@ -68,10 +68,12 @@ class Post_Main{
                     $this,
                     'mandrill_emailer_phpmailer_init' 
                     ));
+      if(get_option('front_end') == 1){
         add_filter( 'the_content', array(
                         &$this,
                         'post_email_frontend'
                 ));
+      }
         add_action( 'plugin_action_links', array( 
                     &$this,
                     'post_email_plugin_links'

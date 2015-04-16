@@ -32,6 +32,14 @@
       
       $show_on_posts = array();
     }
+    if(isset($_POST[ 'front_end' ])) {
+      
+      $front_end   = 1;
+    }
+    else{
+      
+      $front_end = 0;
+    }
     if(isset($_POST[ 'no-forms' ])){
       
       $no_posts = wp_parse_id_list( $_POST[ 'no-forms' ] );
@@ -51,6 +59,7 @@
     update_option( 'post_modal_header_background',        sanitize_text_field( $_POST['background-header-color'] ));
     update_option( 'post_button_background',              sanitize_text_field( $_POST['background-button-color'] ));
     update_option( 'post-email-ex-posts', $no_posts);
+    update_option( 'front_end', $front_end);
     $update_msg = '<p>Information has been Saved.</p>';
 
   }
@@ -224,6 +233,12 @@
       <form action="<?php admin_url() ?>?page=post-email-settings&tab=plugin" method="post">
         <table width="100" class="form-table">
         <tbody>
+        <tr>
+            <td width="200"><?php _e( 'Show Form on front End:', 'post-email' ); ?></td>
+              <td width="877">
+                 <input type="checkbox" name="front_end" id="front_end" value="1" <?php if( get_option( 'front_end' ) == 1 ) { echo 'checked'; } ?>>
+              </td>
+          </tr>
           <tr>
             <td width="200"><?php _e( 'ReCAPTCHA Public KEY :', 'post-email' ); ?></td>
               <td width="877">
