@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     }  
     if( ! defined( 'POST_EMAIL_VERSION' )){ 
         
-        define( 'POST_EMAIL_VERSION', '1.0.3');
+        define( 'POST_EMAIL_VERSION', '1.0.4');
     }
     if( ! defined( 'POST_EMAIL_MINPHP_VERSION' )){ 
         
