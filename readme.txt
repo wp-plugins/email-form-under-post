@@ -4,7 +4,7 @@ Donate link: http://khubbaib.com/
 Tags: post, email, mandrill,  email form, mandrill stats,mandrill-template,mandrill-export
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -135,6 +135,11 @@ star mean *
 
 * Send New user notifications with mandrill
 * Add sample email template for new user notification/email form
+* CSS bug removed
+
+= 1.0.4 - 2015-03-24
+
+* Option for show/hide front end button
 * CSS bug removed
 
 == Donation ==
