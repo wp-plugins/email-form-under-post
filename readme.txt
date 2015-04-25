@@ -142,7 +142,7 @@ star mean *
 * Add sample email template for new user notification/email form
 * CSS bug removed
 
-= 1.0.4 - 2015-04-16
+= 1.0.5 - 2015-04-16
 
 * Option for show/hide front end button
 * CSS bug removed
